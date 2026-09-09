@@ -3,7 +3,7 @@ import VoiceStudioLanding from "./components/VoiceStudioLanding.jsx";
 import AuthPage from "./pages/AuthPage.jsx";
 
 export default function App() {
-  const [hash, setHash] = useState(window.location.hash);
+  const [hash, setHash] = useState(window.location.hash );
 
   useEffect(() => {
     const onHash = () => setHash(window.location.hash);
