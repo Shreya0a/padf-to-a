@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #0e1526;
+  --panel: #161f35;
+  --panel-2: #1c2740;
+  --gold: #c9a24b;
+  --gold-soft: #e4c77a;
+  --paper: #f4f1e9;
+  --muted: #8b93a7;
+  --hair: #2a3552;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--gold);
+  color: #161005;
+}
+
+@layer components {
+  .btn-gold {
+    background: linear-gradient(180deg, var(--gold-soft), var(--gold));
+    color: #161005;
+  }
+  .waveform-divider {
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold) 20%, var(--gold) 80%, transparent);
+    opacity: 0.35;
+  }
+  .card-hover {
+    transition: transform 0.35s ease, border-color 0.35s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    border-color: var(--gold);
+  }
+  .modal-backdrop {
+    background: rgba(6, 9, 18, 0.75);
+    backdrop-filter: blur(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-hover {
+    transition: none;
+  }
+}
